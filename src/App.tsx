@@ -11,6 +11,7 @@ import Stats from './sections/Stats'
 import Security from './sections/Security'
 import Founder from './sections/Founder'
 import CTA from './sections/CTA'
+import Contact from './sections/Contact'
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
           <Security />
           <Founder />
           <CTA />
+          <Contact />
         </main>
         <Footer />
       </div>
