@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service - BPOptima</title>
+  <meta name="description" content="BPOptima Terms of Service. These terms govern your use of our decision infrastructure platform.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
+    }
+    a { color: #00C8B4; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 40px;
+      transition: color 0.2s;
+    }
+    .back:hover { color: rgba(255,255,255,0.6); text-decoration: none; }
+    header { padding: 120px 0 60px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #00C8B4;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+    }
+    .meta strong { color: rgba(255,255,255,0.6); font-weight: 500; }
+    .tldr {
+      margin-top: 32px;
+      padding: 20px 24px;
+      border: 1px solid rgba(0,200,180,0.15);
+      border-left: 3px solid #00C8B4;
+      background: rgba(0,200,180,0.03);
+    }
+    .tldr-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #00C8B4;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .tldr p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+    main { padding: 64px 0; }
+    .section {
+      padding-bottom: 48px;
+      margin-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .section-number { font-size: 12px; color: #00C8B4; letter-spacing: 0.1em; margin-bottom: 12px; }
+    .section h2 {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+    .section p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 12px;
+      line-height: 1.75;
+    }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul {
+      list-style: none;
+      margin: 16px 0;
+    }
+    .section ul li {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #00C8B4;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .info-item-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 4px;
+    }
+    .info-item-value { font-size: 13px; color: rgba(255,255,255,0.6); }
+    .table-wrap { margin: 16px 0; overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th {
+      text-align: left;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      font-weight: 500;
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    td {
+      padding: 10px 14px;
+      color: rgba(255,255,255,0.6);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      vertical-align: top;
+    }
+    td:first-child { color: #fff; font-weight: 500; white-space: nowrap; }
+    .highlight {
+      padding: 16px 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.02);
+      margin: 16px 0;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 40px 0;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    footer a { color: rgba(255,255,255,0.35); }
+    footer a:hover { color: #00C8B4; }
+    @media (max-width: 600px) {
+      header { padding: 80px 0 40px; }
+      .info-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/" class="back">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3L5 8l5 5"/></svg>
+        Back to Home
+      </a>
+      <p class="eyebrow">Legal</p>
+      <h1>Terms of Service</h1>
+      <div class="meta">
+        <span><strong>Last Updated:</strong> January 2026</span>
+        <span><strong>Effective:</strong> January 1, 2026</span>
+        <span><strong>Jurisdiction:</strong> Singapore, SIAC Arbitration</span>
+      </div>
+      <div class="tldr">
+        <p class="tldr-label">The Ground Rules</p>
+        <p>These terms govern your use of BPOptima's decision infrastructure platform. We build reliable automation, you use it responsibly, and we both benefit. By using our services, you agree to these terms.</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="section" id="acceptance">
+        <p class="section-number">01</p>
+        <h2>Acceptance of Terms</h2>
+        <p>By accessing or using BPOptima's services, you agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree, please do not use our services.</p>
+        <p>You represent that you have the authority to bind your organization to these terms. If you are accepting on behalf of a company, you warrant that you have the necessary permissions.</p>
+      </div>
+
+      <div class="section" id="company">
+        <p class="section-number">02</p>
+        <h2>Company Information</h2>
+        <div class="info-grid">
+          <div>
+            <p class="info-item-label">Entity</p>
+            <p class="info-item-value">BP Optima Pte Ltd</p>
+          </div>
+          <div>
+            <p class="info-item-label">Registration</p>
+            <p class="info-item-value">UEN: 202544773H</p>
+          </div>
+          <div>
+            <p class="info-item-label">Address</p>
+            <p class="info-item-value">32 Pekin Street, #05-01, Singapore 048762</p>
+          </div>
+          <div>
+            <p class="info-item-label">Contact</p>
+            <p class="info-item-value"><a href="mailto:dj@bpoptima.com">dj@bpoptima.com</a></p>
+          </div>
+          <div>
+            <p class="info-item-label">Incorporated</p>
+            <p class="info-item-value">2026, Singapore</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="services">
+        <p class="section-number">03</p>
+        <h2>Service Description</h2>
+        <p>BPOptima provides the following services:</p>
+        <p><strong style="color:#fff">Free Evaluation Tools:</strong> Process Playground (process assessments), Fortune Machine (exploratory tool), Architecture brief generation.</p>
+        <p><strong style="color:#fff">Production Services:</strong> API-driven business process outsourcing, Pilot programs and implementations, Enterprise automation solutions.</p>
+      </div>
+
+      <div class="section" id="responsibilities">
+        <p class="section-number">04</p>
+        <h2>User Responsibilities</h2>
+        <p>When using BPOptima, you agree to:</p>
+        <ul>
+          <li>Provide accurate and complete information in all submissions</li>
+          <li>Use services lawfully and not for fraudulent or malicious purposes</li>
+          <li>Not attempt to reverse-engineer, decompile, or extract our AI models or algorithms</li>
+          <li>Maintain confidentiality of any access credentials provided</li>
+          <li>Comply with all applicable laws and regulations</li>
+          <li>Not interfere with or disrupt our services or servers</li>
+          <li>Not use our services to transmit harmful code or malware</li>
+          <li>Respect intellectual property rights of BPOptima and third parties</li>
+        </ul>
+      </div>
+
+      <div class="section" id="ip">
+        <p class="section-number">05</p>
+        <h2>Intellectual Property Rights</h2>
+        <p><strong style="color:#fff">Our Intellectual Property:</strong> The BPOptima platform, AI models, algorithms, brand assets, and all related technology remain the exclusive property of BP Optima Pte Ltd.</p>
+        <p><strong style="color:#fff">Your Intellectual Property:</strong> Your process descriptions, business data, and confidential information remain your property. You grant us a limited license to use this data solely to provide services.</p>
+        <p><strong style="color:#fff">Output and Deliverables:</strong> Architecture briefs, evaluations, and implementation deliverables are licensed to you under a non-exclusive, non-transferable license for your internal business use.</p>
+      </div>
+
+      <div class="section" id="free-services">
+        <p class="section-number">06</p>
+        <h2>Free Services and Evaluations</h2>
+        <ul>
+          <li>Process Playground and Fortune Machine are provided free for evaluation purposes</li>
+          <li>No obligation to proceed with paid implementation services</li>
+          <li>We reserve the right to limit submissions to prevent abuse (e.g. rate limiting)</li>
+          <li>Evaluation results are estimates based on information provided, not guarantees</li>
+          <li>Free services provided "as-is" without warranty (see Section 10)</li>
+        </ul>
+      </div>
+
+      <div class="section" id="payment">
+        <p class="section-number">07</p>
+        <h2>Paid Services and Payment Terms</h2>
+        <p>For production services, pilot programs, and implementations:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Term</th><th>Detail</th></tr></thead>
+            <tbody>
+              <tr><td>Pricing</td><td>Provided in separate Statements of Work (SOWs) or service agreements</td></tr>
+              <tr><td>Payment Terms</td><td>Net 30 days for enterprise clients, or as specified in SOW</td></tr>
+              <tr><td>Currency</td><td>All fees in Singapore Dollars (SGD) unless otherwise agreed</td></tr>
+              <tr><td>Late Payments</td><td>Subject to 1.5% monthly interest</td></tr>
+              <tr><td>Refund Policy</td><td>90-day results guarantee as advertised; full terms in SOW</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section" id="data">
+        <p class="section-number">08</p>
+        <h2>Data and Privacy</h2>
+        <p>Data handling is governed by our <a href="/privacy.html">Privacy Policy</a>, which is incorporated into these terms by reference.</p>
+        <ul>
+          <li>You grant us license to use your data to provide services and improve our platform</li>
+          <li>We may use anonymized, aggregated data for product development and benchmarking</li>
+          <li>We maintain strict confidentiality for sensitive business information</li>
+          <li>All data is encrypted at rest and in transit (AES-256 encryption)</li>
+          <li>You retain ownership of your data and can request deletion at any time</li>
+        </ul>
+      </div>
+
+      <div class="section" id="availability">
+        <p class="section-number">09</p>
+        <h2>Service Availability and Support</h2>
+        <p><strong style="color:#fff">Production APIs:</strong> Target uptime 99.9%. Maintenance windows with 48-hour advance notice. Status page available to paid clients.</p>
+        <p><strong style="color:#fff">Support:</strong> Email at support@bpoptima.com. Paid clients receive 24-hour response SLA. Free services receive best-effort support.</p>
+        <p>We are not liable for downtime caused by force majeure, third-party services, or scheduled maintenance.</p>
+      </div>
+
+      <div class="section" id="warranties">
+        <p class="section-number">10</p>
+        <h2>Warranties and Disclaimers</h2>
+        <p><strong style="color:#fff">Limited Warranty (Paid Services):</strong> We warrant that paid services will be provided professionally, competently, and in accordance with industry standards.</p>
+        <div class="highlight">
+          <strong style="color:#fff">Disclaimers:</strong> Evaluations are estimates, not guarantees of specific outcomes. Free services (Fortune Machine, Playground) are provided "AS-IS" without warranty. We do not guarantee uninterrupted or error-free operation. We are not liable for indirect, consequential, or incidental damages.
+        </div>
+      </div>
+
+      <div class="section" id="liability">
+        <p class="section-number">11</p>
+        <h2>Limitation of Liability</h2>
+        <div class="info-grid">
+          <div>
+            <p class="info-item-label">Paid Services</p>
+            <p class="info-item-value"><strong style="color:#fff">Fees Paid (Last 12 Mo.)</strong><br>Liability capped at total fees paid in the preceding 12 months</p>
+          </div>
+          <div>
+            <p class="info-item-label">Free Services</p>
+            <p class="info-item-value"><strong style="color:#fff">SGD 100</strong><br>Maximum liability for free services is limited to SGD 100</p>
+          </div>
+        </div>
+        <p>These limitations do not apply to gross negligence, willful misconduct, or data breaches caused by our failure to implement reasonable security measures.</p>
+        <p><strong style="color:#fff">Force Majeure:</strong> We are not liable for delays or failures due to events beyond our reasonable control (natural disasters, pandemics, war, government action, etc.).</p>
+      </div>
+
+      <div class="section" id="termination">
+        <p class="section-number">12</p>
+        <h2>Termination</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Party</th><th>Notice Period</th><th>Conditions</th></tr></thead>
+            <tbody>
+              <tr><td>By You</td><td>30 days written notice</td><td>You may terminate at any time</td></tr>
+              <tr><td>By Us</td><td>30 days notice</td><td>Or immediately for material breach</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Upon termination: access to services is revoked, outstanding fees become due, and data is retained per our Privacy Policy. Sections on IP rights, confidentiality, limitation of liability, and dispute resolution survive termination.</p>
+      </div>
+
+      <div class="section" id="governing-law">
+        <p class="section-number">13</p>
+        <h2>Governing Law and Dispute Resolution</h2>
+        <p><strong style="color:#fff">Governing Law:</strong> These terms are governed by the laws of Singapore.</p>
+        <p><strong style="color:#fff">Jurisdiction:</strong> Disputes are subject to the exclusive jurisdiction of Singapore courts.</p>
+        <p><strong style="color:#fff">Negotiation:</strong> Parties agree to attempt good faith negotiation for 30 days before litigation.</p>
+        <p><strong style="color:#fff">Arbitration:</strong> By mutual written agreement, disputes may be submitted to arbitration under SIAC rules.</p>
+      </div>
+
+      <div class="section" id="changes">
+        <p class="section-number">14</p>
+        <h2>Changes to These Terms</h2>
+        <p>We may update these Terms of Service with 30 days advance notice. Material changes will be communicated via email to registered users, and the "Last Updated" date will be updated accordingly. For paid services, material changes require your acceptance. Continued use after the notice period constitutes acceptance.</p>
+      </div>
+
+      <div class="section" id="general">
+        <p class="section-number">15</p>
+        <h2>General Provisions</h2>
+        <ul>
+          <li><strong style="color:#fff">Entire Agreement:</strong> These terms constitute the entire agreement and supersede prior discussions</li>
+          <li><strong style="color:#fff">Severability:</strong> If any provision is found invalid, the rest remain in effect</li>
+          <li><strong style="color:#fff">No Waiver:</strong> Our failure to enforce any right does not waive that right</li>
+          <li><strong style="color:#fff">Assignment:</strong> We may assign these terms; you need our written consent to assign</li>
+          <li><strong style="color:#fff">Headings:</strong> Section headings are for convenience only and do not affect interpretation</li>
+        </ul>
+      </div>
+
+      <div class="section" id="contact">
+        <p class="section-number">16</p>
+        <h2>Contact Information</h2>
+        <p>For questions about these Terms of Service:</p>
+        <div class="info-grid">
+          <div>
+            <p class="info-item-label">Legal Inquiries</p>
+            <p class="info-item-value"><a href="mailto:legal@bpoptima.com">legal@bpoptima.com</a></p>
+          </div>
+          <div>
+            <p class="info-item-label">Support</p>
+            <p class="info-item-value"><a href="mailto:support@bpoptima.com">support@bpoptima.com</a></p>
+          </div>
+          <div>
+            <p class="info-item-label">Business</p>
+            <p class="info-item-value"><a href="mailto:dj@bpoptima.com">dj@bpoptima.com</a></p>
+          </div>
+        </div>
+        <p style="margin-top:16px">BP Optima Pte Ltd, 32 Pekin Street, #05-01, Singapore 048762</p>
+      </div>
+    </main>
+
+    <footer>
+      <span>&copy; 2026 BPOptima, Inc. All rights reserved.</span>
+      <div style="display:flex;gap:24px">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="mailto:legal@bpoptima.com">legal@bpoptima.com</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

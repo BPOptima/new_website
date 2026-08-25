@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - BPOptima</title>
+  <meta name="description" content="BPOptima Privacy Policy. Your data is fully encrypted, never sold, and you control it. GDPR and Singapore PDPA compliant.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
+    }
+    a { color: #00C8B4; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 120px 0 60px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.35); margin-bottom: 40px; transition: color 0.2s; }
+    .back:hover { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .back svg { width: 14px; height: 14px; }
+    .eyebrow { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #00C8B4; margin-bottom: 16px; }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 20px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 24px; font-size: 12px; color: rgba(255,255,255,0.35); }
+    .meta strong { color: rgba(255,255,255,0.6); font-weight: 500; }
+    .tldr { margin-top: 32px; padding: 20px 24px; border: 1px solid rgba(0,200,180,0.2); border-left: 3px solid #00C8B4; background: rgba(0,200,180,0.04); }
+    .tldr-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #00C8B4; font-weight: 600; margin-bottom: 8px; }
+    .tldr p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+    main { padding: 64px 0; }
+    .section { padding-bottom: 48px; margin-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .section-num { font-size: 12px; color: #00C8B4; letter-spacing: 0.1em; margin-bottom: 12px; }
+    .section h2 { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 16px; }
+    .section p { font-size: 15px; color: rgba(255,255,255,0.6); margin-bottom: 16px; line-height: 1.75; }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul { list-style: none; display: flex; flex-direction: column; gap: 10px; margin: 16px 0; }
+    .section li { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; display: flex; align-items: flex-start; gap: 12px; }
+    .section li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: #00C8B4; margin-top: 9px; flex-shrink: 0; }
+    .section li strong { color: #fff; font-weight: 500; }
+    table { width: 100%; border: 1px solid rgba(255,255,255,0.08); border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+    th { text-align: left; padding: 10px 16px; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.35); font-weight: 500; background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    td { padding: 10px 16px; color: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: top; }
+    td:first-child { color: #fff; font-weight: 500; white-space: nowrap; }
+    tr:last-child td { border-bottom: none; }
+    .info-block { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 24px; margin: 16px 0; }
+    .info-block .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 16px; }
+    .info-block .item-label { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
+    .info-block .item-value { font-size: 13px; color: rgba(255,255,255,0.6); }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    .badge { font-size: 11px; letter-spacing: 0.04em; padding: 4px 12px; border: 1px solid rgba(0,200,180,0.3); color: #00C8B4; font-weight: 500; }
+    .rights-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 16px 0; }
+    @media (max-width: 600px) { .rights-grid { grid-template-columns: 1fr; } }
+    .right-card { padding: 16px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.02); }
+    .right-card h3 { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+    .right-card p { font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 0; }
+    footer { border-top: 1px solid rgba(255,255,255,0.08); padding: 40px 0; }
+    footer .inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; font-size: 12px; color: rgba(255,255,255,0.35); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="/" class="back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3L5 8l5 5"/></svg>
+        Back to Home
+      </a>
+      <p class="eyebrow">Legal</p>
+      <h1>Privacy Policy</h1>
+      <div class="meta">
+        <span><strong>Last Updated:</strong> January 2026</span>
+        <span><strong>Effective:</strong> January 1, 2026</span>
+        <span><strong>Controller:</strong> BP Optima Pte Ltd, UEN 202544773H</span>
+      </div>
+      <div class="tldr">
+        <p class="tldr-label">TL;DR</p>
+        <p>We collect your business information to evaluate automation opportunities. Your data is fully encrypted, never sold, and you control it. We are GDPR and Singapore PDPA compliant. Contact us anytime at <a href="mailto:legal@bpoptima.com">legal@bpoptima.com</a> to access, correct, or delete your data.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="section" id="introduction">
+        <p class="section-num">01</p>
+        <h2>Introduction & Data Controller</h2>
+        <p>This Privacy Policy explains how BP Optima Pte Ltd ("BPOptima," "we," "our," or "us") collects, uses, and protects your personal information when you use our platform.</p>
+        <div class="info-block">
+          <div class="grid">
+            <div><p class="item-label">Entity</p><p class="item-value">BP Optima Pte Ltd</p></div>
+            <div><p class="item-label">Registration</p><p class="item-value">UEN: 202544773H</p></div>
+            <div><p class="item-label">Address</p><p class="item-value">32 Pekin Street, #05-01, Singapore 048762</p></div>
+            <div><p class="item-label">Legal Contact</p><p class="item-value"><a href="mailto:legal@bpoptima.com">legal@bpoptima.com</a></p></div>
+            <div><p class="item-label">Oversight</p><p class="item-value">Internal Data Privacy Committee (Board-level)</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="what-we-collect">
+        <p class="section-num">02</p>
+        <h2>What Information We Collect</h2>
+        <p>We collect information you provide directly and automatically when you use our services.</p>
+        <table>
+          <thead><tr><th>Source</th><th>Data Collected</th></tr></thead>
+          <tbody>
+            <tr><td>Lead Forms & Contact</td><td>Name, email, company, role/title, process descriptions, automation requirements, budget ranges, timeline expectations</td></tr>
+            <tr><td>Process Playground</td><td>Process descriptions, workflow details, monthly volume estimates, current tools and systems used</td></tr>
+            <tr><td>Fortune Machine</td><td>Industry selection preferences, spin history, fortune card interactions, LinkedIn share activity</td></tr>
+            <tr><td>Analytics & Usage</td><td>Session identifiers, page paths, scroll depth, time-on-page, interaction events, device/browser/screen data</td></tr>
+            <tr><td>Technical Data</td><td>IP address (session management & fraud prevention), browser type & version, operating system</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section" id="how-we-use">
+        <p class="section-num">03</p>
+        <h2>How We Use Your Information</h2>
+        <ul>
+          <li><strong>Service Delivery:</strong> Process evaluations, architecture brief generation, automation recommendations</li>
+          <li><strong>Communication:</strong> Responding to inquiries, sending blueprints, providing support</li>
+          <li><strong>Product Improvement:</strong> Understanding which features drive value, optimizing user experience</li>
+          <li><strong>Analytics:</strong> Measuring engagement, tracking conversion funnel, reducing bounce rates</li>
+          <li><strong>Compliance:</strong> Fraud prevention, legal obligations, dispute resolution</li>
+          <li><strong>Marketing:</strong> Sending relevant content with your consent, case studies, product updates</li>
+        </ul>
+      </div>
+
+      <div class="section" id="security">
+        <p class="section-num">04</p>
+        <h2>Data Security & Encryption</h2>
+        <p>All prospect data is fully encrypted at rest and in transit using industry-standard AES-256 encryption.</p>
+        <div class="badges">
+          <span class="badge">AES-256 ENCRYPTION</span>
+          <span class="badge">SOC 2 TYPE II</span>
+          <span class="badge">MFA ENFORCED</span>
+          <span class="badge">24HR INCIDENT SLA</span>
+        </div>
+        <ul>
+          <li>Infrastructure hosted on Supabase (SOC 2 Type II certified)</li>
+          <li>Access controls limited to authorized personnel only</li>
+          <li>Regular security audits and vulnerability assessments</li>
+          <li>Automated backup systems with encrypted storage</li>
+          <li>Multi-factor authentication for internal access</li>
+          <li>Incident response procedures with 24-hour notification SLA</li>
+        </ul>
+      </div>
+
+      <div class="section" id="sharing">
+        <p class="section-num">05</p>
+        <h2>Data Sharing & Third Parties</h2>
+        <p>We do <strong>NOT sell your data</strong>. Period. We share data only in these limited circumstances:</p>
+        <ul>
+          <li><strong>Service Providers:</strong> Supabase (database), Lovable Cloud (hosting) under strict data processing agreements</li>
+          <li><strong>Analytics:</strong> Anonymous session tracking only; no personally identifiable information is shared</li>
+          <li><strong>Legal Requirements:</strong> When required by law, court order, or government request</li>
+          <li><strong>Business Transfers:</strong> In the event of merger or acquisition, with user notification</li>
+          <li><strong>With Your Consent:</strong> When you explicitly authorize sharing</li>
+        </ul>
+      </div>
+
+      <div class="section" id="transfers">
+        <p class="section-num">06</p>
+        <h2>International Data Transfers</h2>
+        <p>Our primary data servers are located in Singapore. We operate regional offices in Singapore (headquarters), Indonesia (Jakarta), Vietnam (Ho Chi Minh City), and Thailand (Bangkok).</p>
+        <p>For EU visitors, we comply with GDPR requirements including appropriate safeguards for cross-border transfers (Standard Contractual Clauses). Singapore has been recognized by the EU as providing adequate data protection.</p>
+      </div>
+
+      <div class="section" id="your-rights">
+        <p class="section-num">07</p>
+        <h2>Your Rights (GDPR & PDPA Compliance)</h2>
+        <div class="rights-grid">
+          <div class="right-card"><h3>Right to Access</h3><p>Request a copy of all data we hold about you</p></div>
+          <div class="right-card"><h3>Right to Rectification</h3><p>Correct any inaccurate information</p></div>
+          <div class="right-card"><h3>Right to Erasure</h3><p>Request deletion ("right to be forgotten")</p></div>
+          <div class="right-card"><h3>Right to Portability</h3><p>Receive data in machine-readable format</p></div>
+          <div class="right-card"><h3>Right to Object</h3><p>Opt-out of processing for marketing</p></div>
+          <div class="right-card"><h3>Right to Withdraw</h3><p>Revoke consent at any time</p></div>
+        </div>
+        <p>To exercise your rights, email <a href="mailto:legal@bpoptima.com">legal@bpoptima.com</a>. We will respond within 30 days (GDPR) or 10 business days (Singapore PDPA).</p>
+      </div>
+
+      <div class="section" id="cookies">
+        <p class="section-num">08</p>
+        <h2>Cookies & Tracking Technologies</h2>
+        <table>
+          <thead><tr><th>Type</th><th>Purpose</th><th>Required</th></tr></thead>
+          <tbody>
+            <tr><td>Essential Cookies</td><td>Session management, security, basic functionality</td><td>Yes</td></tr>
+            <tr><td>Analytics Cookies</td><td>Engagement tracking: scroll depth, time on page, interaction events</td><td>Optional</td></tr>
+          </tbody>
+        </table>
+        <p>We do <strong>NOT</strong> use third-party advertising cookies, tracking pixels, or cross-site tracking. To disable cookies, adjust your browser settings. Note that disabling essential cookies may affect site functionality.</p>
+      </div>
+
+      <div class="section" id="retention">
+        <p class="section-num">09</p>
+        <h2>Data Retention</h2>
+        <table>
+          <thead><tr><th>Data Type</th><th>Retention Period</th></tr></thead>
+          <tbody>
+            <tr><td>Active Leads</td><td>Retained until conversion or opt-out request</td></tr>
+            <tr><td>Inactive Leads</td><td>Automatically deleted after 24 months of no engagement</td></tr>
+            <tr><td>Analytics Data</td><td>Aggregated and anonymized after 12 months</td></tr>
+            <tr><td>Legal Obligations</td><td>May be retained longer if required by law (e.g. tax records for 7 years)</td></tr>
+            <tr><td>Deletion Requests</td><td>Processed within 30 days, with confirmation email</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section" id="children">
+        <p class="section-num">10</p>
+        <h2>Children's Privacy</h2>
+        <p>Our services are intended for business professionals and enterprises. We do not knowingly collect personal information from individuals under 18 years of age. If you believe we have inadvertently collected such information, please contact us immediately at <a href="mailto:legal@bpoptima.com">legal@bpoptima.com</a>.</p>
+      </div>
+
+      <div class="section" id="changes">
+        <p class="section-num">11</p>
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. Material changes will be notified via email to all registered users and a prominent notice on our website for 30 days. The "Last Updated" date at the top of this page will also be updated. Continued use of our services after notification constitutes acceptance of the updated policy.</p>
+      </div>
+
+      <div class="section" id="contact">
+        <p class="section-num">12</p>
+        <h2>Contact Information</h2>
+        <p>For privacy-related inquiries, data requests, or complaints:</p>
+        <div class="info-block">
+          <p style="font-size:14px;font-weight:600;margin-bottom:4px;">BP Optima Pte Ltd - Data Privacy Office</p>
+          <p style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:16px;">32 Pekin Street, #05-01, Singapore 048762</p>
+          <div class="grid">
+            <div><p class="item-label">Legal & Privacy</p><p class="item-value"><a href="mailto:legal@bpoptima.com">legal@bpoptima.com</a></p></div>
+            <div><p class="item-label">Support</p><p class="item-value"><a href="mailto:support@bpoptima.com">support@bpoptima.com</a></p></div>
+            <div><p class="item-label">General</p><p class="item-value"><a href="mailto:dj@bpoptima.com">dj@bpoptima.com</a></p></div>
+          </div>
+          <p style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:16px;">Response time: Within 30 days (GDPR) or 10 business days (Singapore PDPA)</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container inner">
+      <p>2026 BPOptima, Inc. All rights reserved.</p>
+      <div style="display:flex;gap:24px;">
+        <a href="/privacy.html" style="color:#00C8B4;font-weight:500;">Privacy Policy</a>
+        <a href="/terms.html" style="color:rgba(255,255,255,0.35);">Terms of Service</a>
+        <a href="mailto:legal@bpoptima.com" style="color:rgba(255,255,255,0.35);">legal@bpoptima.com</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

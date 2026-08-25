@@ -1,49 +1,36 @@
-import { useState } from 'react'
-import type { Page } from './types'
+import SmoothScroll from './components/SmoothScroll'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
-import Home from './pages/Home'
-import Platform from './pages/Platform'
-import HowItWorks from './pages/HowItWorks'
-import Models from './pages/Models'
-import Solutions from './pages/Solutions'
-import CaseStudies from './pages/CaseStudies'
-import Security from './pages/Security'
-import Company from './pages/Company'
-import Pricing from './pages/Pricing'
-import Resources from './pages/Resources'
-import Contact from './pages/Contact'
+import Hero from './sections/Hero'
+import Logos from './sections/Logos'
+import Problem from './sections/Problem'
+import Pipeline from './sections/Pipeline'
+import Models from './sections/Models'
+import Solutions from './sections/Solutions'
+import Stats from './sections/Stats'
+import Security from './sections/Security'
+import Founder from './sections/Founder'
+import CTA from './sections/CTA'
 
 export default function App() {
-  const [page, setPage] = useState<Page>('home')
-  const [darkMode, setDarkMode] = useState(false)
-  const [transitionKey, setTransitionKey] = useState(0)
-
-  const navigate = (p: Page) => {
-    setPage(p)
-    setTransitionKey(k => k + 1)
-    window.scrollTo({ top: 0, behavior: 'instant' })
-  }
-
   return (
-    <div className={darkMode ? 'dark' : ''}>
-      <div className="bg-background text-foreground min-h-screen flex flex-col">
-        <Nav page={page} navigate={navigate} darkMode={darkMode} toggleDark={() => setDarkMode(d => !d)} />
-        <main key={transitionKey} className="flex-1 page-enter">
-          {page === 'home'         && <Home navigate={navigate} />}
-          {page === 'how-it-works' && <HowItWorks navigate={navigate} darkMode={darkMode} />}
-          {page === 'platform'     && <Platform navigate={navigate} />}
-          {page === 'models'       && <Models navigate={navigate} />}
-          {page === 'solutions'    && <Solutions navigate={navigate} />}
-          {page === 'case-studies' && <CaseStudies navigate={navigate} />}
-          {page === 'security'     && <Security navigate={navigate} />}
-          {page === 'company'      && <Company navigate={navigate} />}
-          {page === 'pricing'      && <Pricing navigate={navigate} />}
-          {page === 'resources'    && <Resources navigate={navigate} />}
-          {page === 'contact'      && <Contact navigate={navigate} />}
+    <SmoothScroll>
+      <div className="min-h-screen bg-bg">
+        <Nav />
+        <main>
+          <Hero />
+          <Logos />
+          <Problem />
+          <Pipeline />
+          <Models />
+          <Solutions />
+          <Stats />
+          <Security />
+          <Founder />
+          <CTA />
         </main>
-        <Footer navigate={navigate} />
+        <Footer />
       </div>
-    </div>
+    </SmoothScroll>
   )
 }
