@@ -22,7 +22,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <span className="text-[11px] text-text-muted tracking-wide">&copy; 2026 BPOptima, Inc.</span>
+          <span className="text-[11px] text-text-muted tracking-wide">&copy; 2026 BP Optima Pte Ltd. All rights reserved.</span>
           <span className="text-[10px] text-text-muted tracking-[0.2em] uppercase">Deployed in your VPC. Not ours.</span>
         </div>
       </div>
