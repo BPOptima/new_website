@@ -47,20 +47,15 @@ export default function Logos() {
 
       <Marquee speed={30} className="py-6">
         {logos.map(logo => (
-          <img
-            key={logo.alt}
-            src={logo.src}
-            alt={logo.alt}
-            className="h-5 object-contain opacity-70 mx-16"
-          />
-        ))}
-        {logos.map(logo => (
-          <img
-            key={`${logo.alt}-2`}
-            src={logo.src}
-            alt={logo.alt}
-            className="h-5 object-contain opacity-70 mx-16"
-          />
+          <div key={logo.alt} className="w-48 sm:w-56 px-4 flex items-center justify-center">
+            <div className="logo-rail-surface h-14 w-full flex items-center justify-center px-5">
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="h-6 sm:h-7 w-auto object-contain"
+              />
+            </div>
+          </div>
         ))}
       </Marquee>
     </section>
