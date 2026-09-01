@@ -59,7 +59,7 @@ export default function Contact() {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nPhone: ${phone}\n\nAdditional Info:\n${info}`
     )
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=hello@bpoptima.com&su=${subject}&body=${body}`
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=dj@bpoptima.com&su=${subject}&body=${body}`
     window.open(gmailUrl, '_blank')
     setSubmitted(true)
   }
