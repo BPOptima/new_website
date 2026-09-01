@@ -47,7 +47,12 @@ export default function Contact() {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    const form = e.currentTarget
+    setSubmitted(true)
+  }
+
+  function getMailtoData() {
+    const form = document.querySelector('form')
+    if (!form) return { subject: '', body: '' }
     const data = new FormData(form)
     const name = data.get("name")
     const email = data.get("email")
@@ -59,20 +64,24 @@ export default function Contact() {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nPhone: ${phone}\n\nAdditional Info:\n${info}`
     )
-    
-    // Detect mobile devices
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
-    
-    if (isMobile) {
-      // Use mailto for mobile devices to open native mail app
-      window.location.href = `mailto:dj@bpoptima.com?subject=${subject}&body=${body}`
-    } else {
-      // Use Gmail web interface for desktop
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=dj@bpoptima.com&su=${subject}&body=${body}`
-      window.open(gmailUrl, '_blank')
-    }
-    
-    setSubmitted(true)
+    return { subject, body }
+  }
+
+  function openGmail() {
+    const { subject, body } = getMailtoData()
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=dj@bpoptima.com&su=${subject}&body=${body}`
+    window.open(gmailUrl, '_blank')
+  }
+
+  function openOutlook() {
+    const { subject, body } = getMailtoData()
+    const outlookUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=dj@bpoptima.com&subject=${subject}&body=${body}`
+    window.open(outlookUrl, '_blank')
+  }
+
+  function openNativeApp() {
+    const { subject, body } = getMailtoData()
+    window.location.href = `mailto:dj@bpoptima.com?subject=${subject}&body=${body}`
   }
 
   const inputClass = (field: string) =>
@@ -103,10 +112,36 @@ export default function Contact() {
         </div>
 
         {submitted ? (
-          <div className="text-center py-20">
-            <div className="w-px h-12 bg-accent/40 mx-auto mb-8" />
-            <p className="text-2xl text-text font-light tracking-[-0.02em]">
-              We'll be in touch.
+          <div className="text-center py-12">
+            <div className="w-px h-12 bg-accent/40 mx-auto mb-6" />
+            <p className="text-2xl text-text font-light tracking-[-0.02em] mb-8">
+              Choose how to send your message
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
+              <button
+                onClick={openGmail}
+                className="group relative px-8 py-3 bg-transparent border border-white/15 rounded-full text-sm tracking-[0.1em] uppercase text-text hover:border-accent hover:text-accent transition-all duration-500"
+              >
+                <span className="relative z-10">Gmail</span>
+                <span className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </button>
+              <button
+                onClick={openOutlook}
+                className="group relative px-8 py-3 bg-transparent border border-white/15 rounded-full text-sm tracking-[0.1em] uppercase text-text hover:border-accent hover:text-accent transition-all duration-500"
+              >
+                <span className="relative z-10">Outlook</span>
+                <span className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </button>
+              <button
+                onClick={openNativeApp}
+                className="group relative px-8 py-3 bg-transparent border border-white/15 rounded-full text-sm tracking-[0.1em] uppercase text-text hover:border-accent hover:text-accent transition-all duration-500"
+              >
+                <span className="relative z-10">Other Mail App</span>
+                <span className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </button>
+            </div>
+            <p className="text-xs text-white/30">
+              Your information will be pre-filled in your selected mail app
             </p>
           </div>
         ) : (
