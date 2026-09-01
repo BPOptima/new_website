@@ -356,7 +356,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom badges */}
-      <div ref={badgesRef} className="absolute bottom-16 left-0 right-0 px-8 md:px-16">
+      <div ref={badgesRef} className="absolute bottom-16 left-0 right-0 px-8 md:px-16 hidden sm:block">
         <div className="max-w-[1400px] mx-auto flex items-center gap-10">
           {['SOC 2 Type II', 'HIPAA', 'ISO 27001', 'Zero Egress'].map(badge => (
             <span key={badge} className="text-[10px] tracking-[0.2em] uppercase text-text-muted font-light">

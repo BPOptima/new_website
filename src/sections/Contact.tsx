@@ -59,8 +59,19 @@ export default function Contact() {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nPhone: ${phone}\n\nAdditional Info:\n${info}`
     )
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=dj@bpoptima.com&su=${subject}&body=${body}`
-    window.open(gmailUrl, '_blank')
+    
+    // Detect mobile devices
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+    
+    if (isMobile) {
+      // Use mailto for mobile devices to open native mail app
+      window.location.href = `mailto:dj@bpoptima.com?subject=${subject}&body=${body}`
+    } else {
+      // Use Gmail web interface for desktop
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=dj@bpoptima.com&su=${subject}&body=${body}`
+      window.open(gmailUrl, '_blank')
+    }
+    
     setSubmitted(true)
   }
 

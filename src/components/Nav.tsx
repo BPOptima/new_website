@@ -44,7 +44,7 @@ export default function Nav() {
 
         <div className="flex items-center gap-4">
           <a
-            href="#cta"
+            href="#contact"
             className="hidden sm:inline-flex items-center px-5 py-2 text-[13px] font-medium tracking-wide bg-white text-black rounded-full hover:scale-105 active:scale-95 transition-all duration-300"
           >
             Request Demo
@@ -78,7 +78,7 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href="#cta"
+              href="#contact"
               onClick={() => setMobileOpen(false)}
               className="mt-4 px-5 py-3 text-[13px] font-medium text-center bg-white text-black rounded-full"
             >
