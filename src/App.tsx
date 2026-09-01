@@ -10,7 +10,6 @@ import Solutions from './sections/Solutions'
 import Stats from './sections/Stats'
 import Security from './sections/Security'
 import Founder from './sections/Founder'
-import CTA from './sections/CTA'
 import Contact from './sections/Contact'
 
 export default function App() {
@@ -28,7 +27,6 @@ export default function App() {
           <Stats />
           <Security />
           <Founder />
-          <CTA />
           <Contact />
         </main>
         <Footer />

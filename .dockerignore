@@ -1,0 +1,17 @@
+node_modules
+dist
+.git
+.figma/make/dev
+.figma/make/dev.json
+.figma/make/deploy
+.figma/make/deploy-preview
+.figma/make/install
+.figma/make/format
+.figma/make/langserver
+.figma/make/analyze-routes
+.claude
+.vscode
+*.md
+cuda-keyring_1.1-1_all.deb
+src/imports/pasted_text
+src/imports/*.pdf

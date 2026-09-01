@@ -59,7 +59,8 @@ export default function Contact() {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nPhone: ${phone}\n\nAdditional Info:\n${info}`
     )
-    window.location.href = `mailto:hello@bpoptima.com?subject=${subject}&body=${body}`
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=hello@bpoptima.com&su=${subject}&body=${body}`
+    window.open(gmailUrl, '_blank')
     setSubmitted(true)
   }
 
@@ -72,20 +73,22 @@ export default function Contact() {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative py-32 border-t border-border overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center py-32 border-t border-border overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-accent/[0.02] rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative max-w-xl mx-auto px-8">
+      <div className="relative max-w-3xl mx-auto px-8">
         <div className="contact-heading text-center mb-20">
-          <span className="text-[11px] tracking-[0.3em] uppercase text-accent/70 mb-4 block">
-            Contact
-          </span>
-          <h2 className="text-[clamp(2rem,4vw,3rem)] font-semibold tracking-[-0.03em] leading-[1.1]">
-            Let's talk
+          <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] font-semibold tracking-[-0.03em] leading-[1.05] mb-6">
+            Ready to own your
+            <br />
+            AI decisions?
           </h2>
+          <p className="text-lg md:text-xl text-text-secondary font-light leading-relaxed max-w-2xl mx-auto">
+            Deploy sovereign AI inside your infrastructure in 12 weeks. Talk to our team about your regulated workflow.
+          </p>
         </div>
 
         {submitted ? (
