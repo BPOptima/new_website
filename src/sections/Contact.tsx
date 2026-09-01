@@ -69,14 +69,30 @@ export default function Contact() {
 
   function openGmail() {
     const { subject, body } = getMailtoData()
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=dj@bpoptima.com&su=${subject}&body=${body}`
-    window.open(gmailUrl, '_blank')
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+    
+    if (isMobile) {
+      // On mobile, use mailto which will show app chooser (user can select Gmail app)
+      window.location.href = `mailto:dj@bpoptima.com?subject=${subject}&body=${body}`
+    } else {
+      // Use Gmail web interface for desktop
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=dj@bpoptima.com&su=${subject}&body=${body}`
+      window.open(gmailUrl, '_blank')
+    }
   }
 
   function openOutlook() {
     const { subject, body } = getMailtoData()
-    const outlookUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=dj@bpoptima.com&subject=${subject}&body=${body}`
-    window.open(outlookUrl, '_blank')
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+    
+    if (isMobile) {
+      // On mobile, use mailto which will show app chooser (user can select Outlook app)
+      window.location.href = `mailto:dj@bpoptima.com?subject=${subject}&body=${body}`
+    } else {
+      // Use Outlook web interface for desktop
+      const outlookUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=dj@bpoptima.com&subject=${subject}&body=${body}`
+      window.open(outlookUrl, '_blank')
+    }
   }
 
   function openNativeApp() {
