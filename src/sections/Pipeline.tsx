@@ -66,12 +66,15 @@ function RibbonCanvas({ progress }: { progress: number }) {
     if (!ctx) return
 
     let time = 0
+    // Boost visibility on laptop-sized viewports and up (>=1024px)
+    let intensity = 1
 
     const resize = () => {
       const dpr = Math.min(devicePixelRatio, 2)
       canvas.width = canvas.offsetWidth * dpr
       canvas.height = canvas.offsetHeight * dpr
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+      intensity = window.innerWidth >= 1024 ? 1.8 : 1
     }
     resize()
     window.addEventListener('resize', resize)
@@ -87,7 +90,7 @@ function RibbonCanvas({ progress }: { progress: number }) {
       const ribbonCount = 5
       for (let r = 0; r < ribbonCount; r++) {
         const ribbonOffset = r * 0.18
-        const opacity = 0.03 + (r === 2 ? 0.06 : 0) + p * 0.02
+        const opacity = Math.min(1, (0.03 + (r === 2 ? 0.06 : 0) + p * 0.02) * intensity)
         const yBase = h * (0.2 + r * 0.15)
         const amplitude = 40 + r * 15 + Math.sin(time + r) * 10
         const frequency = 0.003 + r * 0.0005
@@ -132,7 +135,7 @@ function RibbonCanvas({ progress }: { progress: number }) {
           Math.sin(x * frequency * 2.3 + speed * 0.7) * (amplitude * 0.4) +
           Math.cos(x * frequency * 0.5 + speed * 1.3) * (amplitude * 0.2)
 
-        const alpha = Math.sin(t * Math.PI) * 0.6
+        const alpha = Math.min(1, Math.sin(t * Math.PI) * 0.6 * intensity)
         ctx.beginPath()
         ctx.arc(x, y, 1.5, 0, Math.PI * 2)
         ctx.fillStyle = `rgba(0, 200, 180, ${alpha})`

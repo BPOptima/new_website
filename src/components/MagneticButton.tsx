@@ -6,9 +6,11 @@ interface MagneticButtonProps {
   href?: string
   strength?: number
   variant?: 'primary' | 'ghost'
+  target?: string
+  rel?: string
 }
 
-export default function MagneticButton({ children, className = '', href, strength = 0.3, variant = 'primary' }: MagneticButtonProps) {
+export default function MagneticButton({ children, className = '', href, strength = 0.3, variant = 'primary', target, rel }: MagneticButtonProps) {
   const ref = useRef<HTMLAnchorElement>(null)
   const [transform, setTransform] = useState('translate(0px, 0px) scale(1)')
   const [shine, setShine] = useState(-100)
@@ -36,6 +38,8 @@ export default function MagneticButton({ children, className = '', href, strengt
     <a
       ref={ref}
       href={href}
+      target={target}
+      rel={rel}
       className={`relative overflow-hidden rounded-full px-8 py-3.5 text-[14px] font-medium tracking-wide inline-flex items-center justify-center gap-3 ${baseStyles} ${className}`}
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}

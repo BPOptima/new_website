@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import MagneticButton from '../components/MagneticButton'
+import { buildMailLink, isMobileDevice } from '../lib/mail'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -79,11 +80,22 @@ export default function CTA() {
         </p>
 
         <div className="cta-buttons flex flex-col sm:flex-row justify-center gap-5">
-          <MagneticButton href="mailto:dj@bpoptima.com" variant="primary" className="group">
+          <MagneticButton
+            href={buildMailLink('dj@bpoptima.com', 'Technical Demo Request')}
+            target={isMobileDevice() ? undefined : '_blank'}
+            rel={isMobileDevice() ? undefined : 'noopener noreferrer'}
+            variant="primary"
+            className="group"
+          >
             Book a Technical Demo
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="group-hover:translate-x-1 transition-transform duration-300"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
           </MagneticButton>
-          <MagneticButton href="mailto:dj@bpoptima.com" variant="ghost">
+          <MagneticButton
+            href={buildMailLink('dj@bpoptima.com', 'Security Docs Request')}
+            target={isMobileDevice() ? undefined : '_blank'}
+            rel={isMobileDevice() ? undefined : 'noopener noreferrer'}
+            variant="ghost"
+          >
             Request Security Docs
           </MagneticButton>
         </div>

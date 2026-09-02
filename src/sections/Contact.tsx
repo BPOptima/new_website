@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { buildMailLink, isMobileDevice } from "../lib/mail"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -55,12 +56,15 @@ export default function Contact() {
     const phone = data.get("phone")
     const info = data.get("info")
 
-    const subject = encodeURIComponent(`Inquiry from ${name} - ${company}`)
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nPhone: ${phone}\n\nAdditional Info:\n${info}`
-    )
-    
-    window.location.href = `mailto:dj@bpoptima.com?subject=${subject}&body=${body}`
+    const subject = `Inquiry from ${name} - ${company}`
+    const body = `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nPhone: ${phone}\n\nAdditional Info:\n${info}`
+
+    const mailLink = buildMailLink("dj@bpoptima.com", subject, body)
+    if (isMobileDevice()) {
+      window.location.href = mailLink
+    } else {
+      window.open(mailLink, "_blank", "noopener,noreferrer")
+    }
     setSubmitted(true)
   }
 

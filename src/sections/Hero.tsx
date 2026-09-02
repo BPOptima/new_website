@@ -28,6 +28,8 @@ function DataRoutingCanvas() {
     const NODE_COUNT = 32
     const PACKET_SPEED = 0.005
     const MOUSE_RADIUS = 180
+    // Boost visibility on laptop-sized viewports and up (>=1024px)
+    let intensity = 1
 
     const resize = () => {
       const dpr = Math.min(devicePixelRatio, 2)
@@ -39,6 +41,7 @@ function DataRoutingCanvas() {
       canvas.style.width = W + 'px'
       canvas.style.height = H + 'px'
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+      intensity = window.innerWidth >= 1024 ? 1.8 : 1
       generateNodes()
       generateEdges()
     }
@@ -106,9 +109,9 @@ function DataRoutingCanvas() {
         const midX = (a.x + b.x) / 2
         const midY = (a.y + b.y) / 2
         const dm = Math.sqrt((mouse.x - midX) ** 2 + (mouse.y - midY) ** 2)
-        const edgeAlpha = dm < MOUSE_RADIUS * 1.5
+        const edgeAlpha = Math.min(1, (dm < MOUSE_RADIUS * 1.5
           ? 0.06 + (1 - dm / (MOUSE_RADIUS * 1.5)) * 0.1
-          : 0.06
+          : 0.06) * intensity)
 
         ctx.beginPath()
         ctx.moveTo(a.x, a.y)
@@ -124,7 +127,7 @@ function DataRoutingCanvas() {
         n.glow *= 0.93
 
         const dm = Math.sqrt((mouse.x - n.x) ** 2 + (mouse.y - n.y) ** 2)
-        const mouseAlpha = dm < MOUSE_RADIUS ? 0.3 + (1 - dm / MOUSE_RADIUS) * 0.4 : 0.15
+        const mouseAlpha = Math.min(1, (dm < MOUSE_RADIUS ? 0.3 + (1 - dm / MOUSE_RADIUS) * 0.4 : 0.15) * intensity)
         const radius = n.r + n.glow * 4
         const alpha = Math.min(1, mouseAlpha + n.glow * 0.8)
 
@@ -132,7 +135,7 @@ function DataRoutingCanvas() {
         if (n.glow > 0.05) {
           const glowRad = radius + n.glow * 12
           const glowGrad = ctx.createRadialGradient(n.x, n.y, radius, n.x, n.y, glowRad)
-          glowGrad.addColorStop(0, `rgba(0, 200, 180, ${n.glow * 0.5})`)
+          glowGrad.addColorStop(0, `rgba(0, 200, 180, ${Math.min(1, n.glow * 0.5 * intensity)})`)
           glowGrad.addColorStop(1, 'rgba(0, 200, 180, 0)')
           ctx.beginPath()
           ctx.arc(n.x, n.y, glowRad, 0, Math.PI * 2)
@@ -173,7 +176,7 @@ function DataRoutingCanvas() {
 
         // Glow
         const grad = ctx.createRadialGradient(x, y, 0, x, y, 14)
-        grad.addColorStop(0, `rgba(0, 200, 180, ${p.opacity * 0.25})`)
+        grad.addColorStop(0, `rgba(0, 200, 180, ${Math.min(1, p.opacity * 0.25 * intensity)})`)
         grad.addColorStop(1, 'rgba(0, 200, 180, 0)')
         ctx.beginPath()
         ctx.arc(x, y, 14, 0, Math.PI * 2)
@@ -183,7 +186,7 @@ function DataRoutingCanvas() {
         // Dot
         ctx.beginPath()
         ctx.arc(x, y, 2.5, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(0, 200, 180, ${p.opacity * 0.9})`
+        ctx.fillStyle = `rgba(0, 200, 180, ${Math.min(1, p.opacity * 0.9 * intensity)})`
         ctx.fill()
       }
 
@@ -228,7 +231,6 @@ export default function Hero() {
   const subtextRef = useRef<HTMLParagraphElement>(null)
   const tagRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
-  const badgesRef = useRef<HTMLDivElement>(null)
   const counterRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -245,7 +247,6 @@ export default function Hero() {
       tl.from(subtextRef.current, { opacity: 0, y: 20, duration: 1 }, 1.0)
       tl.from(ctaRef.current?.children ?? [], { opacity: 0, y: 20, duration: 0.8, stagger: 0.1 }, 1.2)
       tl.from(counterRef.current, { opacity: 0, x: 30, duration: 1 }, 0.6)
-      tl.from(badgesRef.current?.children ?? [], { opacity: 0, duration: 0.6, stagger: 0.08 }, 1.5)
 
       // Parallax layers on scroll
       gsap.to(headingRef.current, {
@@ -352,17 +353,6 @@ export default function Hero() {
             </div>
             <div className="text-[11px] tracking-[0.2em] uppercase text-text-muted">Continents Deployed</div>
           </div>
-        </div>
-      </div>
-
-      {/* Bottom badges */}
-      <div ref={badgesRef} className="absolute bottom-16 left-0 right-0 px-8 md:px-16 hidden sm:block">
-        <div className="max-w-[1400px] mx-auto flex items-center gap-10">
-          {['SOC 2 Type II', 'HIPAA', 'ISO 27001', 'Zero Egress'].map(badge => (
-            <span key={badge} className="text-[10px] tracking-[0.2em] uppercase text-text-muted font-light">
-              {badge}
-            </span>
-          ))}
         </div>
       </div>
 

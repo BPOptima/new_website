@@ -15,7 +15,7 @@ const controls = [
   { title: 'Network Isolation', body: 'Dedicated VPC. No public endpoints. Outbound blocked by default on Sovereign.' },
 ]
 
-const certs = ['SOC 2 Type II', 'HIPAA', 'ISO 27001', 'GDPR']
+const certs = ['GDPR']
 
 export default function Security() {
   const sectionRef = useRef<HTMLDivElement>(null)
