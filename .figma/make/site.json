@@ -1,11 +1,17 @@
 {
-  "title": "BPOptima  Decision Infrastructure for Regulated Operations",
-  "description": "Generates concise, SEO-friendly descriptions for web applications to enhance search visibility and attract targeted users effectively.",
+  "title": "BPOptima | Decision Infrastructure for Regulated Operations",
+  "description": "BPOptima is decision infrastructure for regulated operations. Domain-trained SLMs that understand, decide, and route deployed inside your VPC with zero data leakage.",
   "robots": {
-    "index": false
+    "index": true
   },
   "accessibility": {
     "addBypassLinks": false,
     "ignoreReducedMotion": false
+  },
+  "icons": {
+    "icon": "/favicon.jpeg"
+  },
+  "customScripts": {
+    "headEnd": "<meta name=\"robots\" content=\"index, follow\" />\n<meta name=\"author\" content=\"BPOptima\" />\n<meta name=\"keywords\" content=\"BPOptima, decision infrastructure, regulated operations, domain-trained SLMs, Groundset, sovereign AI, enterprise AI models, VPC deployment, deterministic AI, regulated workflows, zero data leakage\" />\n<link rel=\"canonical\" href=\"https://bpoptima.com/\" />\n<link rel=\"apple-touch-icon\" href=\"/favicon.jpeg\" />\n<meta name=\"theme-color\" content=\"#000000\" />\n<meta property=\"og:type\" content=\"website\" />\n<meta property=\"og:site_name\" content=\"BPOptima\" />\n<meta property=\"og:url\" content=\"https://bpoptima.com/\" />\n<meta name=\"twitter:card\" content=\"summary\" />\n<meta name=\"twitter:title\" content=\"BPOptima | Decision Infrastructure for Regulated Operations\" />\n<meta name=\"twitter:description\" content=\"Where every decision must be correct, fast, and auditable. Understand → Decide → Route.\" />\n<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"Organization\", \"name\": \"BPOptima\", \"url\": \"https://bpoptima.com/\", \"logo\": \"https://bpoptima.com/favicon.jpeg\", \"description\": \"BPOptima is decision infrastructure for regulated operations. Domain-trained SLMs that understand, decide, and route deployed inside your VPC with zero data leakage.\"}</script>"
   }
 }
