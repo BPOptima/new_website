@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bpoptima.com/sitemap.xml
+Sitemap: https://www.bpoptima.com/sitemap.xml
