@@ -1,9 +1,65 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
-    { "source": "/", "destination": "https://groundset.tech/", "statusCode": 301 },
-    { "source": "/privacy.html", "destination": "https://groundset.tech/privacy", "statusCode": 301 },
-    { "source": "/terms.html", "destination": "https://groundset.tech/terms", "statusCode": 301 },
-    { "source": "/:path*", "destination": "https://groundset.tech/:path*", "statusCode": 301 }
+    {
+      "source": "/",
+      "destination": "https://groundset.tech/?from=bpoptima",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "https://groundset.tech/privacy?from=bpoptima",
+      "statusCode": 301
+    },
+    {
+      "source": "/terms.html",
+      "destination": "https://groundset.tech/terms?from=bpoptima",
+      "statusCode": 301
+    },
+    {
+      "source": "/careers",
+      "destination": "https://groundset.tech/company?from=bpoptima#careers",
+      "statusCode": 301
+    },
+    {
+      "source": "/career",
+      "destination": "https://groundset.tech/company?from=bpoptima#careers",
+      "statusCode": 301
+    },
+    {
+      "source": "/jobs",
+      "destination": "https://groundset.tech/company?from=bpoptima#careers",
+      "statusCode": 301
+    },
+    {
+      "source": "/about",
+      "destination": "https://groundset.tech/company?from=bpoptima",
+      "statusCode": 301
+    },
+    {
+      "source": "/about-us",
+      "destination": "https://groundset.tech/company?from=bpoptima",
+      "statusCode": 301
+    },
+    {
+      "source": "/team",
+      "destination": "https://groundset.tech/company?from=bpoptima",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact",
+      "destination": "https://groundset.tech/walkthrough?from=bpoptima",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-us",
+      "destination": "https://groundset.tech/walkthrough?from=bpoptima",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://groundset.tech/:path*?from=bpoptima",
+      "statusCode": 301
+    }
   ]
 }
